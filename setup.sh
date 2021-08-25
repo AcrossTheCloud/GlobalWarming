@@ -58,7 +58,7 @@
 #
 # 6. MINECRAFT CLIENT (LOCAL NETWORK)
 #  - Open the Minecraft Launcher
-#  - Launch options > Add new > Version "1.13" (specifically)
+#  - Launch options > Add new > Version "1.14" (specifically)
 #  - News > Play
 #  - Play Multiplayer > Add Server > 192.168.[###].[###]:[PORT]
 #  * Note: the Minecraft server log (in the Ubuntu terminal) will have the port number to use
@@ -118,9 +118,7 @@ echo -e "${LPAREN}INSTALL GIT${RPAREN}" &&
 
 # Java (need 1.8)
 echo -e "${LPAREN}INSTALL JAVA 1.8${RPAREN}" &&
-sudo add-apt-repository -y ppa:webupd8team/java &&
-{ sudo apt-get -y update || return; } &&
-{ sudo apt-get -y install oracle-java8-installer || return; } &&
+{ sudo apt-get -y install openjdk-8-jdk-headless || return; } &&
 
 # Minecraft user
 echo -e "${LPAREN}MINECRAFT USER${RPAREN}" &&
@@ -134,7 +132,7 @@ sudo su minecraft -c "mkdir -p /home/minecraft/build" &&
 cd /home/minecraft/build &&
 sudo su minecraft -c "rm -f BuildTools.jar" &&
 sudo su minecraft -c "wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" &&
-sudo su minecraft -c "java -jar BuildTools.jar --rev 1.13" &&
+sudo su minecraft -c "java -jar BuildTools.jar --rev 1.14" &&
 
 # Create a server directory
 echo -e "${LPAREN}SERVER DIRECTORY${RPAREN}" &&
