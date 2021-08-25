@@ -195,8 +195,8 @@ sudo su minecraft -c "wget https://hub.spigotmc.org/jenkins/job/spigot-essential
 
 # Install MySQL server and client
 echo -e "${LPAREN}INSTALL MYSQL${RPAREN}" &&
-{ sudo apt-get -y install mysql-server-5.7 || return; } &&
-{ sudo apt-get -y install mysql-client-5.7 || return; } &&
+{ sudo apt-get -y install mysql-server-8.0 || return; } &&
+{ sudo apt-get -y install mysql-client-8.0 || return; } &&
 
 # Delete the old database (if it exists)
 echo -e "${LPAREN}DELETE OLD DATABASE${RPAREN}" &&
